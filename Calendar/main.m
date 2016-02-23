@@ -7,11 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Function.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
-        NSLog(@"Hello, World!");
+        int year, month, dayPerMonth, dayWeeks;
+        Function* function = [Function initFunction];
+        year = [function getDataByType:0];
+        month = [function getDataByType:1];
+        dayPerMonth = [function dayPerMonthByYear:year Month:month];
+        dayWeeks = [function dayWeeksByYear:year Month:month];
+        [function outputCalendarByYear:year Month:month DayPerMonth:dayPerMonth DayWeeks:dayWeeks];
+        printf("\n");
     }
     return 0;
 }
